@@ -264,7 +264,7 @@ public class Simulator3D : Spatial
 		);
 
 		strokerMesh.Translation = new Vector3(
-			Mathf.Lerp(-0.5f, 0.5f, sway),
+			Mathf.Lerp(0.5f, -0.5f, sway),
 			Mathf.Lerp(-1.0f, 1.0f, mainStroke),
 			Mathf.Lerp(0.5f, -0.5f, surge)
 		);

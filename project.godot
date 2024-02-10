@@ -23,6 +23,7 @@ window/per_pixel_transparency/enabled=true
 [global]
 
 verbose=false
+renderer=false
 
 [gui]
 

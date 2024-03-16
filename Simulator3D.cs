@@ -68,7 +68,8 @@ public class Simulator3D : Spatial
 		var elements = name.Split('.');
 		if(elements.Length == 1) 
 			return ScriptType.MainStroke;
-
+		if (elements.Last().ToLower().Contains("raw"))
+			return ScriptType.MainStroke;
 		var last = elements.Last().ToLower();
 		if(last.Contains("roll"))
 			return ScriptType.Roll;

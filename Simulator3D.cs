@@ -66,20 +66,21 @@ public class Simulator3D : Spatial
 	private static ScriptType? getScriptType(string name)
 	{
 		var elements = name.Split('.');
-		if(elements.Length == 1) 
+		if (elements.Length == 1 || elements.Last().ToLower().Equals("l0"))
 			return ScriptType.MainStroke;
 		if (elements.Last().ToLower().Contains("raw"))
 			return ScriptType.MainStroke;
+
 		var last = elements.Last().ToLower();
-		if(last.Contains("roll"))
+		if (last.Contains("roll") || last.Contains("r1"))
 			return ScriptType.Roll;
-		else if(last.Contains("pitch"))
+		else if (last.Contains("pitch") || last.Contains("r2"))
 			return ScriptType.Pitch;
-		else if(last.Contains("twist"))
+		else if (last.Contains("twist") || last.Contains("r0"))
 			return ScriptType.Twist;
-		else if(last.Contains("sway"))
+		else if (last.Contains("sway") || last.Contains("l2"))
 			return ScriptType.Sway;
-		else if(last.Contains("surge"))
+		else if (last.Contains("surge") || last.Contains("l1"))
 			return ScriptType.Surge;
 
 		return null;
